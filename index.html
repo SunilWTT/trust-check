@@ -468,6 +468,94 @@ nav {
 }
 </style>
 
+
+<style>
+/* QR RESPONSIVE FIX */
+.reveal-card {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.reveal-card > img,
+.reveal-card .qr-code,
+.reveal-card .qr-image,
+.reveal-card .qr-real img {
+  display: block;
+  width: min(340px, 100%);
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  margin: 22px auto;
+  border-radius: 12px;
+}
+
+.qr-real {
+  width: min(340px, 100%);
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  margin: 22px auto;
+  padding: 0;
+  overflow: visible;
+  display: grid;
+  place-items: center;
+}
+
+@media (max-width: 900px) {
+  .reveal-card {
+    padding: 28px 24px;
+  }
+
+  .reveal-card > img,
+  .reveal-card .qr-code,
+  .reveal-card .qr-image,
+  .reveal-card .qr-real img,
+  .qr-real {
+    width: min(320px, 100%);
+  }
+}
+
+@media (max-width: 600px) {
+  .reveal-card {
+    width: 100%;
+    padding: 22px 14px;
+    border-radius: 20px;
+  }
+
+  .reveal-card > img,
+  .reveal-card .qr-code,
+  .reveal-card .qr-image,
+  .reveal-card .qr-real img,
+  .qr-real {
+    width: min(280px, 100%);
+    margin: 18px auto;
+  }
+
+  .reveal-card h2 {
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .reveal-card h3 {
+    font-size: 18px;
+    line-height: 1.35;
+  }
+}
+
+@media (max-width: 380px) {
+  .reveal-card > img,
+  .reveal-card .qr-code,
+  .reveal-card .qr-image,
+  .reveal-card .qr-real img,
+  .qr-real {
+    width: min(250px, 100%);
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="container">
@@ -544,7 +632,7 @@ nav {
       <p>Most people would have closed the website by now.</p>
       <p><b>But you didn't.</b></p>
       <h3>Here's where you decide whether to trust us…</h3>
-      <div><img src="QR.png"></img></div>
+      <div class="qr-real"><img src="QR.png"></img></div>
       <h3>If you trust this experiment, you can pay. ❤️</h3>
       <p class="note">Before paying, verify the recipient details shown by your payment app.</p>
       <button class="btn" onclick="goStep(6)">🚫 I Don't Trust It →</button>
